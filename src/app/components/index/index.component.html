@@ -1,0 +1,21 @@
+
+<div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+                <div class="card"  class="col-sm-4" style="width: 18rem;" *ngFor="let mock of mocks">
+                        <a  href="{{mock.link}}"><img class="card-img-top" class="card-img-top" src="{{mock.image}}" 
+                            alt="Card image cap"></a>  
+                              <div class="card-body">
+                      <h5 class="card-title">{{mock.name}}</h5>
+                      <p class="card-text"><strong>Price:</strong> {{mock.price}}-{{mock.currency}}</p>
+                      <a [routerLink]="['/view', mock._id]" class="btn btn-default">View Description</a>
+                      <a [routerLink]="['/edit', mock._id]" class="btn btn-primary">Edit</a>
+                      <button (click)="deleteMock(mock._id)"  class="btn btn-danger">Delete</button>  
+                      </div>
+                  </div>  
+            </div>  
+        </div>
+
+      </div>
+
+      

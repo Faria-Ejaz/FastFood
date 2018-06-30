@@ -1,0 +1,75 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{ title }}
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Name</label>
+        <input type="text" class="form-control" formControlName="name" #name [(ngModel)] = "mock.name" />
+      </div>
+      <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || 
+        angForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['name'].errors.required">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Price</label>
+        <input type="text" class="form-control" formControlName="price" #price [(ngModel)] = "mock.price"/>
+      </div>
+      <div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty ||
+       angForm.controls['price'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['price'].errors.required">
+          Price is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Description </label>
+        <input type="text" class="form-control" formControlName="description " #description [(ngModel)] = "mock.description" />
+      </div>
+      <div *ngIf="angForm.controls['description'].invalid && (angForm.controls['description '].dirty ||
+       angForm.controls['description '].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['description '].errors.required">
+          description is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Image </label>
+        <input type="text" class="form-control" formControlName="image " #image [(ngModel)] = "mock.image" />
+      </div>
+      <div *ngIf="angForm.controls['image '].invalid && (angForm.controls['image '].dirty ||
+       angForm.controls['image '].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['image '].errors.required">
+          image is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Currency </label>
+        <input type="text" class="form-control" formControlName="currency " #currency [(ngModel)] =
+         "mock.currency" />
+      </div>
+      <div *ngIf="angForm.controls['currency '].invalid && (angForm.controls['currency '].dirty || 
+      angForm.controls['currency '].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['currency '].errors.required">
+          currency is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Link </label>
+        <input type="text" class="form-control" formControlName="link" #link [(ngModel)] = "mock.link" />
+      </div>
+      <div *ngIf="angForm.controls['link '].invalid && (angForm.controls['link '].dirty || 
+      angForm.controls['link '].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['link '].errors.required">
+          Link is required.
+        </div>
+      </div>
+        <div class="form-group">
+          <button (click)="updateMock(name.value, price.value, description.value, image.value,
+           currency.value, link.value)" [disabled]="angForm.pristine ||
+           angForm.invalid" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+  </div>
+</div>
